@@ -1,24 +1,20 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+ crossorigin="" />
+
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+ crossorigin="">
+</script>
 
 
-<head>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-</head>
-<body>
-  <div id = 'Leaflet-Map'></div>
-  still not worked:
-  <p>
-    Map X coords:<input id = 'mapX' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{map.lat}}>
+
+<div id='Leaflet-Map'></div>
+still not worked:
+<p>
+	Map X coords:<input id = 'mapX' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{map.lat}}>
     Marker X coords:<input id = 'markerX' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{marker.lat}}>
   </p>
   <p>
     Map Y coords:<input id = 'mapY' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{map.lng}}>
     Marker Y coords:<input id = 'markerY' type = 'test' pattern = '^[ 0-9]+$' size = '10'>
   </p>
-
-</body>
