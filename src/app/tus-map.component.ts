@@ -40,5 +40,16 @@ export class TusMap implements OnInit {
  
     map.on('click', onMapClick);
     //map.on('clmousemoveick', onMapMoved);
+    
   }
 }
+/*
+todo:
+  Maps and markers coords should upgrading each time they changed
+    Cords from leaflet and form'text' should bind to each other
+      ???
+    ???
+
+//may it be worth moving the map to two tables?
+
+*/
