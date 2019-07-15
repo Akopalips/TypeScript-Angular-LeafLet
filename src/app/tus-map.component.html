@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
  crossorigin="" />
 
@@ -11,10 +12,11 @@
 <div id='Leaflet-Map'></div>
 still not worked:
 <p>
-	Map X coords:<input id = 'mapX' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{map.lat}}>
-    Marker X coords:<input id = 'markerX' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{marker.lat}}>
-  </p>
-  <p>
-    Map Y coords:<input id = 'mapY' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{map.lng}}>
-    Marker Y coords:<input id = 'markerY' type = 'test' pattern = '^[ 0-9]+$' size = '10'>
-  </p>
+	Map X coords:<input id = 'mapX' type = 'test' pattern = '^[ 0-9]+$' size = '10' [(ngModel)]="maplaln.lat"/>
+  Marker X coords:<input id = 'markerX' type = 'test' pattern = '^[ 0-9]+$' size = '10'>
+</p>
+<p>
+  Map Y coords:<input id = 'mapY' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{maplaln.lng}}>
+  Marker Y coords:<input id = 'markerY' type = 'test' pattern = '^[ 0-9]+$' size = '10'>
+</p>
+<input type = 'text' [(ngModel)]="maplaln.lat">

@@ -10,8 +10,7 @@ declare let L;
 })
 
 export class TusMap implements OnInit {
-  constructor() {}
-  map;
+  maplaln;
   marker;
 
   //ngOnInit вызывается сразу после того, как свойства, привязанные к данным, были проверены в первый раз и до того, как был проверен любой из его дочерних элементов. Он вызывается только один раз, когда директива создается.
@@ -24,22 +23,21 @@ export class TusMap implements OnInit {
 
 
       
-    this.marker = 123
 
-    this.map = map.getCenter()
+    this.maplaln = map.getCenter()
     
     function onMapClick(e) {
       L.marker(e.latlng).addTo(map);
       this.marker = e.latlng
     }
     function onMapMoved(e) {
-      this.this.map = map.getCenter()
+      this.maplaln = map.getCenter()
     }
 
 
  
     map.on('click', onMapClick);
-    //map.on('clmousemoveick', onMapMoved);
+    map.on('moveend', onMapMoved);
     
   }
 }
@@ -50,6 +48,6 @@ todo:
       ???
     ???
 
-//may it be worth moving the map to two tables?
+https://metanit.com/web/angular2/2.10.php
 
-*/
+//may it be worth moving the map to two tables?\*/
