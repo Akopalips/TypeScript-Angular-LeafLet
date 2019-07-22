@@ -13,14 +13,20 @@ export class TusMapMain{
 
   //ngOnInit вызывается сразу после того, как свойства, привязанные к данным, были проверены в первый раз и до того, как был проверен любой из его дочерних элементов. Он вызывается только один раз, когда директива создается.
   ngOnInit() {
-    const map = L.map('LeafletMap').setView([51.505, -0.09], 13);
+    const map = L.map('LeafletMap').setView([56.010569, 92.852545], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1IjoidHVzcHJpbmciLCJhIjoiY2p4dTdsOW54MDJ3ejNtcDk5czFjMWYyOSJ9.Tp41AghE2hkJ3mRnn023tA'
     }).addTo(map);
 
-
-
+    document.getElementById("mapX").oninput = function() {map.setView([
+      document.getElementById("mapX").value,
+      document.getElementById("mapY").value],
+      )}
+    document.getElementById("mapY").oninput = function() {map.setView([
+      document.getElementById("mapX").value,
+      document.getElementById("mapY").value],
+      )}
 
     var mapcenter = map.getCenter();
     (<HTMLInputElement> document.getElementById("mapX")).value = mapcenter.lat;
@@ -28,8 +34,8 @@ export class TusMapMain{
     
 
     map.on('click',
-    function(e) {
-      if (this.flag) {
+    function (e) {//if !flag crate marker. then change only coords(optimisation).
+      if ( this.flag) {
         this.marker.remove();
       };
       this.marker = L.marker(e.latlng).addTo(map);
@@ -46,12 +52,14 @@ export class TusMapMain{
       this.flag = '1';
     });
 
+    //document.getElementById("markerY").oninput = function() {mapOnClick()}
+
     map.on('move', 
     function (e) {
     });
 
     map.on('drag', 
-    function(e) {
+    function (e) {
     })
     
   }
