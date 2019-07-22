@@ -4,40 +4,47 @@ import 'leaflet';
 declare let L;
 
 @Component({
-  selector: 'TusMap',
+  selector: 'Tus-Map-Main',
   templateUrl: './tus-map.component.html',
   styleUrls: ['./tus-map.component.css']
 })
 
-export class TusMap implements OnInit {
-  maplaln;
-  marker;
+export class TusMapMain{
 
   //ngOnInit вызывается сразу после того, как свойства, привязанные к данным, были проверены в первый раз и до того, как был проверен любой из его дочерних элементов. Он вызывается только один раз, когда директива создается.
   ngOnInit() {
-    const map = L.map('Leaflet-Map').setView([51.505, -0.09], 13);
+    const map = L.map('LeafletMap').setView([51.505, -0.09], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1IjoidHVzcHJpbmciLCJhIjoiY2p4dTdsOW54MDJ3ejNtcDk5czFjMWYyOSJ9.Tp41AghE2hkJ3mRnn023tA'
     }).addTo(map);
 
 
-      
 
-    this.maplaln = map.getCenter()
+
+    var mapcenter = map.getCenter();
+    (<HTMLInputElement> document.getElementById("mapX")).value = mapcenter.lat;
+    (<HTMLInputElement> document.getElementById("mapY")).value = mapcenter.lng;
     
-    function onMapClick(e) {
-      L.marker(e.latlng).addTo(map);
-      this.marker = e.latlng
-    }
-    function onMapMoved(e) {
-      this.maplaln = map.getCenter()
-    }
 
+    map.on('click',
+    function(e) {
+      var marker = L.marker(e.latlng).addTo(map);
+      marker.dragging.enable();
+      marker.on(
+        'drag', 
+        function(e) {
+      });
+      (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat;
+      (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng;
+    });
+    map.on('move', 
+    function (e) {
+    });
 
- 
-    map.on('click', onMapClick);
-    map.on('moveend', onMapMoved);
+    map.on('drag', 
+    function(e) {
+    })
     
   }
 }
@@ -45,6 +52,7 @@ export class TusMap implements OnInit {
 todo:
   Maps and markers coords should upgrading each time they changed
     Cords from leaflet and form'text' should bind to each other
+    List of markers
       ???
     ???
 
