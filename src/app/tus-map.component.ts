@@ -4,7 +4,7 @@ import 'leaflet';
 declare let L;
 
 @Component({
-  selector: 'Tus-Map-Main',
+  selector: 'TusMapMain',
   templateUrl: './tus-map.component.html',
   styleUrls: ['./tus-map.component.css']
 })
@@ -55,6 +55,10 @@ todo:
     List of markers
       ???
     ???
+done:
+  map
+    markers are druggable
+    map's coords 
 
 https://metanit.com/web/angular2/2.10.php
 
