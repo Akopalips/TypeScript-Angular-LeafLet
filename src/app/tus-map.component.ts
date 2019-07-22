@@ -38,24 +38,25 @@ export class TusMapMain{
 
 
     map.on('click',
-    function (e) {//if !flag crate marker. then change only coords(optimisation).
+    function (e) {
       
-      if ( this.flag) {
-        this.marker.remove();
-      };
-      this.marker = L.marker(e.latlng).addTo(map);
-      this.marker.dragging.enable();
-      this.marker.on(
-        'drag', 
-        function(e) {
-          (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat.toFixed(6);
-          (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng.toFixed(6);
-        }
-      );
+      if (!this.flag) {
+        this.marker = L.marker(e.latlng).addTo(map);
+        this.marker.dragging.enable();
+        this.marker.on(
+          'drag', 
+          function(e) {
+            (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat.toFixed(6);
+            (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng.toFixed(6);
+          }
+        );
+        this.flag = '1';
+      }
+      else{
+        this.marker.setLatLng(e.latlng);
+      }
       (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat.toFixed(6);
       (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng.toFixed(6);
-      this.flag = '1';
-      var smth = this.marker;
     })
 
 
