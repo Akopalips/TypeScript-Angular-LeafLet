@@ -37,7 +37,10 @@ export class TusMapMain{
       this.marker.on(
         'drag', 
         function(e) {
-      });
+          (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat.toFixed(10);
+          (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng.toFixed(10);
+        }
+      );
       (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat.toFixed(10);
       (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng.toFixed(10);
       this.flag = '1';
