@@ -8,15 +8,43 @@
 </script>
 
 
+<table >
+  <tr>
+    <td>
+      <div id='LeafletMap'></div>
+    </td>
+  
+  </tr>
+  <tr>
+    <td>
+      still not worked:
 
-<div id='Leaflet-Map'></div>
-still not worked:
-<p>
-	Map X coords:<input id = 'mapX' type = 'test' pattern = '^[ 0-9]+$' size = '10' [(ngModel)]="maplaln.lat"/>
-  Marker X coords:<input id = 'markerX' type = 'test' pattern = '^[ 0-9]+$' size = '10'>
-</p>
-<p>
-  Map Y coords:<input id = 'mapY' type = 'test' pattern = '^[ 0-9]+$' size = '10' value = {{maplaln.lng}}>
-  Marker Y coords:<input id = 'markerY' type = 'test' pattern = '^[ 0-9]+$' size = '10'>
-</p>
-<input type = 'text' [(ngModel)]="maplaln.lat">
+
+      <table >
+        <tr>
+          <td>
+            Map X coords:
+            <input id = 'mapX' 
+            pattern = '^[ 0-9]+$' size = '10'/>
+            <p></p>
+            Map Y coords:
+            <input id = 'mapY' 
+            pattern = '^[ 0-9]+$' size = '10'/>
+          </td>
+          <td>
+            Marker X coords:
+            <input id = 'markerX' 
+            [(ngModel)] = "markerX"
+            pattern = '^[ 0-9]+$' size = '10'/>
+            <p></p>
+            Marker Y coords:
+            <input id = 'markerY' 
+            [(ngModel)] = "markerY"
+            pattern = '^[ 0-9]+$' size = '10'/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!--input type = 'text' [(ngModel)]="maplaln.lat"-->
