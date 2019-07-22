@@ -29,15 +29,20 @@ export class TusMapMain{
 
     map.on('click',
     function(e) {
-      var marker = L.marker(e.latlng).addTo(map);
-      marker.dragging.enable();
-      marker.on(
+      if (this.flag) {
+        this.marker.remove();
+      };
+      this.marker = L.marker(e.latlng).addTo(map);
+      this.marker.dragging.enable();
+      this.marker.on(
         'drag', 
         function(e) {
       });
-      (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat;
-      (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng;
+      (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat.toFixed(10);
+      (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng.toFixed(10);
+      this.flag = '1';
     });
+
     map.on('move', 
     function (e) {
     });
@@ -61,5 +66,4 @@ done:
     map's coords 
 
 https://metanit.com/web/angular2/2.10.php
-
-//may it be worth moving the map to two tables?\*/
+*/
