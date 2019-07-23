@@ -57,6 +57,17 @@ export class TusMapMain{
       }
       (<HTMLInputElement> document.getElementById("markerX")).value = e.latlng.lat.toFixed(6);
       (<HTMLInputElement> document.getElementById("markerY")).value = e.latlng.lng.toFixed(6);
+
+      document.getElementById("markerX").oninput = onMarkersInputsChanged;
+      document.getElementById("markerY").oninput = onMarkersInputsChanged;
+      var marker = this.marker;
+      function onMarkersInputsChanged(){
+        marker.setLatLng([
+        document.getElementById("markerX").value,
+        document.getElementById("markerY").value]
+        );
+      };
+
     })
 
 
