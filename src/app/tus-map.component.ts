@@ -62,7 +62,7 @@ export class TusMapMain{
 
 
 
-    map.on('move', 
+    map.on('drag', 
     function (e) {
       (<HTMLInputElement> document.getElementById("mapX")).value = e.target.getCenter().lat.toFixed(6);
       (<HTMLInputElement> document.getElementById("mapY")).value = e.target.getCenter().lng.toFixed(6);
