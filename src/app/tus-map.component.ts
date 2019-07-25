@@ -81,18 +81,3 @@ export class TusMapMain{
   }
 }
 //console.log(e.target.getCenter() )
-
-/*
-todo:
-  Maps and markers coords should upgrading each time they changed
-    Cords from leaflet and form'text' should bind to each other
-    List of markers
-      ???
-    ???
-done:
-  map
-    markers are druggable
-    map's coords 
-
-https://metanit.com/web/angular2/2.10.php
-*/
