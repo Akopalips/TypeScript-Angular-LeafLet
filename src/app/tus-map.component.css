@@ -1,1 +1,7 @@
-#LeafletMap { height: 400px; }
+#LeafletMap { 
+  height: 400px; 
+}
+
+.container {
+
+}
